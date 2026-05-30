@@ -37,9 +37,22 @@ export default function Reservas() {
           <p dangerouslySetInnerHTML={{ __html: r.d }} />
           <div className="btns">
             {r.confirmed ? (
-              <span className="btn confirmed" title={`Reserva confirmada #${r.confirmed.id}`}>
-                ✓ Reservado · #{r.confirmed.id}
-              </span>
+              r.confirmed.proof ? (
+                <a
+                  className="btn confirmed proof"
+                  href={r.confirmed.proof}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Ver confirmação"
+                >
+                  ✓ Reservado · #{r.confirmed.id}
+                  <span className="proof-icon">🔍</span>
+                </a>
+              ) : (
+                <span className="btn confirmed" title={`Reserva confirmada #${r.confirmed.id}`}>
+                  ✓ Reservado · #{r.confirmed.id}
+                </span>
+              )
             ) : (
               <a
                 className={`btn ${r.link.official ? 'official' : ''}`}

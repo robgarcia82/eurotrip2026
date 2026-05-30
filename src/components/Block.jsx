@@ -47,10 +47,24 @@ export default function Block({ block: b, dayCls, isDone, onToggle }) {
         {(b.confirmed || b.ticket || b.map) && (
           <div className="btns">
             {b.confirmed ? (
-              <span className="btn confirmed" title={`Reserva confirmada #${b.confirmed.id}`}>
-                ✓ Reservado · #{b.confirmed.id}
-                {b.confirmed.at && ` · ${b.confirmed.at}`}
-              </span>
+              b.confirmed.proof ? (
+                <a
+                  className="btn confirmed proof"
+                  href={b.confirmed.proof}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Ver confirmação"
+                >
+                  ✓ Reservado · #{b.confirmed.id}
+                  {b.confirmed.at && ` · ${b.confirmed.at}`}
+                  <span className="proof-icon">🔍</span>
+                </a>
+              ) : (
+                <span className="btn confirmed" title={`Reserva confirmada #${b.confirmed.id}`}>
+                  ✓ Reservado · #{b.confirmed.id}
+                  {b.confirmed.at && ` · ${b.confirmed.at}`}
+                </span>
+              )
             ) : b.ticket && (
               <a
                 className={`btn ${b.ticket.official ? 'official' : ''}`}
