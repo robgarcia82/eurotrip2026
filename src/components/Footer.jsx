@@ -17,23 +17,45 @@ export default function Footer() {
       Toque no título de cada atração para marcar como ✓ feito · Horários de
       pôr do sol e funcionamento podem variar — confira no dia.
       <br />
-      <button
-        onClick={handleReset}
-        style={{
-          marginTop: 10,
-          fontFamily: 'inherit',
-          fontSize: 11,
-          fontWeight: 600,
-          color: 'var(--ink-faint)',
-          background: 'none',
-          border: '1px solid var(--line)',
-          borderRadius: 8,
-          padding: '4px 10px',
-          cursor: 'pointer'
-        }}
-      >
-        Limpar marcações
-      </button>
+      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', justifyContent: 'center', marginTop: 10 }}>
+        <button
+          onClick={handleReset}
+          style={{
+            fontFamily: 'inherit',
+            fontSize: 11,
+            fontWeight: 600,
+            color: 'var(--ink-faint)',
+            background: 'none',
+            border: '1px solid var(--line)',
+            borderRadius: 8,
+            padding: '4px 10px',
+            cursor: 'pointer'
+          }}
+        >
+          Limpar marcações
+        </button>
+        <a
+          href="https://github.com/robgarcia82/eurotrip2026/edit/main/src/data.js"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            fontFamily: 'inherit',
+            fontSize: 11,
+            fontWeight: 600,
+            color: 'var(--ink-faint)',
+            background: 'none',
+            border: '1px solid var(--line)',
+            borderRadius: 8,
+            padding: '4px 10px',
+            textDecoration: 'none',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 4
+          }}
+        >
+          ✏️ Editar no GitHub
+        </a>
+      </div>
     </footer>
   )
 }
