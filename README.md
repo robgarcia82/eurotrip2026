@@ -2,6 +2,11 @@
 
 Aplicação React + Vite com o roteiro interativo da viagem **30 mai → 7 jun 2026** (Madrid + Budapeste). Roda 100% no front, sem backend, e persiste o que você marca como feito no `localStorage` do navegador.
 
+**🌐 Produção:** https://eurotrip2026-robgarcia82s-projects.vercel.app
+**📦 Repo:** https://github.com/robgarcia82/eurotrip2026
+
+Deploy automático em todo push pra `main`.
+
 ## Como rodar localmente
 
 ```bash
