@@ -119,15 +119,16 @@ export const DAYS = [
     {time:"13:50",t:"Decolagem Ryanair FR5712",desc:"Budapeste → Madrid, ~3h20. Assento 19D.",map:"Budapest Ferenc Liszt Airport"},
     {time:"17:10",t:"Pouso em Madri (MAD)",bt:true,desc:"Transfer ao novo hotel na região da Gran Vía / Plaza de España. Táxi ~€33 ou metrô.",tags:["Hotel: Grupotel Mayorazgo"],map:"Madrid Barajas Airport"},
     {time:"18:30",t:"Check-in no Grupotel Mayorazgo",desc:"Bem central (Flor Baja, ao lado da Gran Vía / Plaza de España). Cancelamento grátis nesta reserva.",map:"Grupotel Mayorazgo Madrid"},
-    {time:"20:30",t:"Reencontro suave com Madri",desc:"Você fez Cava Baja, San Miguel e San Ginés ano passado. Reencontro com a cidade pelo <b>Mercado de San Antón</b> (Chueca, 12 min do hotel) para vermut + petiscos. Mais cansado? <b>Casa Macareno</b> (Malasaña, 8 min) abre direto 12:30→01:30 e tem mesa fácil às quintas. Reserve.",bestTime:"Jantar à espanhola começa ~21h",tags:["NOVO pra você","Dia de transição — vá leve","Macareno: reserve 1-2 dias antes"],map:"Mercado de San Anton Madrid",solo:"high"}
+    {time:"20:30",t:"Hundred Burgers Conde Duque 🍔",desc:"Comfort food de boas-vindas a Madri — um dos melhores hambúrgueres do mundo (Top 50 Best Burger anos seguidos). <b>Conde Duque 17</b>, ~10 min a pé do Grupotel. Smash + double smash são signature; o \"Hundred\" leva queijo cheddar maturado + bacon + cebola caramelizada. Vibe casual, balcão solo-friendly, ~€15-22 com bebida. Reserva pelo site (recomendado pra quinta à noite).",bestTime:"~20:30 — antes do horário cheio espanhol",tags:["NOVIDADE pra você","€€","Top 50 Best Burger","Solo: balcão fácil","Reserva recomendada"],
+      ticket:{label:"Reservar (oficial)",url:"https://www.hundredburgers.com/",official:true},map:"Hundred Burgers Conde Duque 17 Madrid",solo:"high"}
   ],
   food:{title:"Onde comer (volta a Madri — tudo NOVO)",city:"madrid",rows:[
-    {lbl:"Mercado",it:"<b>Mercado de San Antón</b> (Chueca) — <span>versão local do San Miguel.</span>",map:"Mercado de San Anton Madrid",solo:"high"},
-    {lbl:"Tapas",it:"<b>Casa Macareno</b> (Malasaña) — <span>tortilhas inventivas (brie/trufa).</span>",map:"Casa Macareno San Vicente Ferrer 44 Madrid",solo:"high"},
-    {lbl:"Doce",it:"<b>Bianchi Kiosko Caffé</b> (Malasaña) — <span>café italiano de bairro, NOVO.</span>",map:"Bianchi Kiosko Cafe Pez 4 Madrid",solo:"high"}
+    {lbl:"Jantar ★",it:"<b>Hundred Burgers Conde Duque</b> (Conde Duque 17, 10min hotel) — <span>Top 50 Best Burger, comfort food de boas-vindas. Reserve.</span>",map:"Hundred Burgers Conde Duque 17 Madrid",solo:"high"},
+    {lbl:"Alternativa",it:"<b>Mercado de San Antón</b> (Chueca, 12min) — <span>versão local do San Miguel; mais leve se não estiver com fome de hambúrguer.</span>",map:"Mercado de San Anton Madrid",solo:"high"},
+    {lbl:"Pós-jantar",it:"<b>Bianchi Kiosko Caffé</b> (Pez 4, Malasaña, 7min) — <span>espresso italiano de balcão pra fechar a noite.</span>",map:"Bianchi Kiosko Cafe Pez 4 Madrid",solo:"high"}
   ]},
-  rain:"Noite chuvosa em Madri (raro): jante coberto no <b>Mercado de San Antón</b> ou <b>Mercado de Vallehermoso</b> (Chamberí, mais local ainda).",
-  tips:["Como o cancelamento do Grupotel é grátis, dá tranquilidade caso algo mude."]
+  rain:"Conde Duque é coberto, então o plano se sustenta. Backup: <b>Mercado de San Antón</b> (Chueca) ou <b>Mercado de Vallehermoso</b> (Chamberí) — ambos cobertos.",
+  tips:["Como o cancelamento do Grupotel é grátis, dá tranquilidade caso algo mude.","Reserve o Hundred Burgers de manhã do dia ou na véspera — quinta à noite costuma lotar."]
 },
 {
   id:7, dn:"Sex", dd:"05", mon:"jun", date:"2026-06-05", city:"madrid", cityLabel:"Madrid",
@@ -214,6 +215,10 @@ export const RESERVAS = [
    d:"<b>Atenção solo:</b> evite o produto temático \"Aperol & Prosecco\" — é vendido pra casais (mesas para dois, brinde temático). Para você indo sozinho, melhor: <b>Legenda \"Duna Bella\"</b> ou outro sightseeing comum com audioguia, ~75 min, €17-22. Doca exata depende do operador — verifique no e-mail (a maioria sai de Vigadó tér ou Jane Haining rakpart).",
    link:{label:"Buscar sightseeing cruises (GetYourGuide)",url:"https://www.getyourguide.com/budapest-l36/danube-cruises-tc274/",official:false},
    map:"Vigado ter Budapest cruise dock", mapUncertain:true, solo:"high"},
+  {p:2, when:"🟠 1-2 dias antes — quinta à noite lota", t:"Hundred Burgers Conde Duque (Madri · qui 4/jun)",
+   d:"Top 50 Best Burger anos seguidos — comfort food de boas-vindas a Madri após a volta de Budapeste. Conde Duque 17 (~10 min do Grupotel). \"Hundred\" signature: cheddar maturado + bacon + cebola caramelizada. ~€15-22 com bebida. Reserva pelo site oficial; quinta à noite costuma lotar.",
+   link:{label:"Reservar (oficial)",url:"https://www.hundredburgers.com/",official:true},
+   map:"Hundred Burgers Conde Duque 17 Madrid",solo:"high"},
   {p:2, when:"🟠 1-3 dias antes", t:"Sala de Despiece (Madri · sex 5/jun)",
    d:"Cult madrilenho com conceito açougue — sente no balcão para ver os pratos finalizados na sua frente. Após a Calle Ponzano. Aberto sex 13-17 + 20-24, então 21:30 é horário cheio. Sem reserva, fila de 30+ min.",
    link:{label:"Reservar (oficial)",url:"https://saladedespiece.com/",official:true},
