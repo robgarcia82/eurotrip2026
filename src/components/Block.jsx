@@ -55,13 +55,15 @@ export default function Block({ block: b, dayCls, isDone, onToggle }) {
                   rel="noopener noreferrer"
                   title="Ver confirmação"
                 >
-                  ✓ Reservado · #{b.confirmed.id}
+                  ✓ Reservado
+                  {b.confirmed.id && ` · #${b.confirmed.id}`}
                   {b.confirmed.at && ` · ${b.confirmed.at}`}
                   <span className="proof-icon">🔍</span>
                 </a>
               ) : (
-                <span className="btn confirmed" title={`Reserva confirmada #${b.confirmed.id}`}>
-                  ✓ Reservado · #{b.confirmed.id}
+                <span className="btn confirmed" title="Reserva confirmada">
+                  ✓ Reservado
+                  {b.confirmed.id && ` · #${b.confirmed.id}`}
                   {b.confirmed.at && ` · ${b.confirmed.at}`}
                 </span>
               )

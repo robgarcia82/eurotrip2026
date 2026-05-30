@@ -45,12 +45,14 @@ export default function Reservas() {
                   rel="noopener noreferrer"
                   title="Ver confirmação"
                 >
-                  ✓ Reservado · #{r.confirmed.id}
+                  ✓ Reservado
+                  {r.confirmed.id && ` · #${r.confirmed.id}`}
                   <span className="proof-icon">🔍</span>
                 </a>
               ) : (
-                <span className="btn confirmed" title={`Reserva confirmada #${r.confirmed.id}`}>
-                  ✓ Reservado · #{r.confirmed.id}
+                <span className="btn confirmed" title="Reserva confirmada">
+                  ✓ Reservado
+                  {r.confirmed.id && ` · #${r.confirmed.id}`}
                 </span>
               )
             ) : (
