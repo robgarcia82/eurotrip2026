@@ -9,6 +9,15 @@ export default function Block({ block: b, dayCls, isDone, onToggle }) {
       <span className="node"></span>
       <div className="time">{b.time}</div>
       <div className={`card ${isDone ? 'done' : ''}`}>
+        {b.img && (
+          <img
+            className="card-img"
+            src={b.img}
+            alt={b.imgAlt || b.t.replace(/<[^>]+>/g, '')}
+            loading="lazy"
+            decoding="async"
+          />
+        )}
         <h3 onClick={onToggle} style={{ cursor: 'pointer' }}>
           <span className="chk">✓</span>
           <span className="nm" dangerouslySetInnerHTML={{ __html: b.t }} />
