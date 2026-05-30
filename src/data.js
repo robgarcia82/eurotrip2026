@@ -130,13 +130,15 @@ export const DAYS = [
 },
 {
   id:7, dn:"Sex", dd:"05", mon:"jun", date:"2026-06-05", city:"madrid", cityLabel:"Madrid",
-  intensity:"int", title:"Madri que faltou: Thyssen, Salamanca & Ponzano",
-  sub:"Tudo NOVO pra você: o terceiro museu do triângulo, o bairro mais elegante e a rua de tapas onde os madrilenhos comem.",
+  intensity:"int", title:"Bernabéu, Salamanca & Ponzano",
+  sub:"Manhã no estádio recém-reformado, almoço madrilenho no Mercado de la Paz, tarde em Salamanca e jantar cult em Ponzano.",
   blocks:[
-    {time:"09:00",t:"Café da manhã no hotel",desc:"Incluído no Grupotel Mayorazgo — depois sai direto pro Thyssen, sem desvio.",map:"Grupotel Mayorazgo Madrid"},
-    {time:"10:00",t:"Museu Thyssen-Bornemisza ★",desc:"O terceiro do triângulo de arte de Madri — você fez Prado e Reina Sofía ano passado, este é o que faltou. Coleção que vai do Renascimento até Pop Art, muito mais ampla cronologicamente; bem menos cheio. €13.",bestTime:"Abertura (10h) para evitar a fila",tags:["NOVIDADE pra você","€13","~1h30 de visita"],
-      ticket:{label:"Ingressos (oficial)",url:"https://www.museothyssen.org/en/visit",official:true},img:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Site_of_the_Retiro_and_the_Prado_in_Madrid_49_%2829684554308%29.jpg/1280px-Site_of_the_Retiro_and_the_Prado_in_Madrid_49_%2829684554308%29.jpg",map:"Museo Thyssen-Bornemisza Madrid",solo:"high"},
-    {time:"12:00",t:"CaixaForum + jardim vertical",desc:"Centro cultural a 5 min do Thyssen, com a icônica fachada de jardim vertical de Patrick Blanc. Exposições temporárias surpreendentes, entrada ~€6. Bom escape da hora do calor.",tags:["NOVO pra você","€6"],img:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Caixaforum_Madrid_2024.jpg/1280px-Caixaforum_Madrid_2024.jpg",map:"CaixaForum Madrid",solo:"high"},
+    {time:"09:00",t:"Café da manhã no hotel",desc:"Incluído no Grupotel Mayorazgo — depois sai direto pro metrô L10, Plaza España.",map:"Grupotel Mayorazgo Madrid"},
+    {time:"09:30",t:"Metrô L10 → Santiago Bernabéu",bt:true,desc:"L10 (azul-marinho) sai da Plaza España direto pra estação Santiago Bernabéu — ~15 min, sem baldeação.",tags:["L10 azul-marinho","~15 min"],map:"Santiago Bernabeu metro station Madrid"},
+    {time:"10:00",t:"Tour Estádio Santiago Bernabéu ★",desc:"O estádio do Real Madrid reformado em 2024 — cobertura retrátil, gramado retrátil sub-superfície, telão 360º, museu de troféus (Champions, Mundiais). Tour autoguiado ~1h30, inclui vestiário, beira do gramado, sala de imprensa. <b>Reserve online com antecedência</b> — slot das 10h costuma ter vaga e é o mais vazio.",bestTime:"Slot 10h (menos cheio)",tags:["NOVIDADE pra você","€35","~1h30","RESERVA online"],
+      ticket:{label:"Reservar Tour (oficial)",url:"https://www.realmadrid.com/en/santiago-bernabeu-stadium/tour-bernabeu",official:true},img:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/M-estadio-santiago-bernabeu-diciembre-2024-c.jpg/1280px-M-estadio-santiago-bernabeu-diciembre-2024-c.jpg",map:"Santiago Bernabeu Stadium Madrid",solo:"high"},
+    {time:"12:00",t:"Metrô L10 → Estação de Atocha",bt:true,desc:"L10 sul até Príncipe Pío, baldeação pra R-Cercanías ou L1 até Atocha. ~25 min com baldeação. Alternativa: táxi/Uber direto ~€12, 20 min.",tags:["~25 min metrô","Ou táxi ~€12"],map:"Atocha railway station Madrid"},
+    {time:"12:30",t:"Atocha — estufa tropical 🌴",desc:"A estação de trens de Atocha tem uma <b>estufa tropical de 4.000 m² dentro do antigo hall</b>: palmeiras altas, lagoa com tartarugas, ambiente úmido bem diferente do resto da cidade. Grátis, é só atravessar. ~10 min pra ver, foto e seguir. Saída direta pro metrô L1 (Atocha Renfe) em direção a Serrano.",bestTime:"Manhã/início da tarde — menos lotada",tags:["NOVIDADE pra você","Grátis","Tartarugas reais","~10 min"],img:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Atocha_railway_station_5.JPG/1280px-Atocha_railway_station_5.JPG",map:"Atocha railway station tropical garden Madrid",solo:"high"},
     {time:"13:30",t:"Almoço: Casa Dani no Mercado de la Paz",desc:"Metrô L2/L4 até Serrano, depois 7 min a pé. Casa Dani fica dentro do Mercado de la Paz — clássica tortilla espanhola madrilenha (uma das mais respeitadas da cidade) + menu del día caseiro €13-15. O mercado é frequentado por moradores do Salamanca, não por turistas. <b>Sex 7-20h</b>, sem reserva — chegue antes das 14h.",bestTime:"Antes das 14h para evitar fila",tags:["NOVO pra você","€","Sem reserva","Local autêntico"],map:"Casa Dani Mercado de la Paz Madrid",solo:"high"},
     {time:"15:00",t:"Bairro de Salamanca — Calle Serrano ★",desc:"O \"milhão de ouro\" de Madri, a vibe é mais Paris que Madri: Loewe, Hermès, mas também Massimo Dutti, Sandro, Carolina Herrera. Calle Serrano + Calle Velázquez + Calle Ortega y Gasset. Cafés e gelaterias nas calçadas.",bestTime:"Tarde: ruas com sombra, ar-condicionado das lojas",tags:["NOVIDADE pra você","Luxe shopping","Vibe parisiense"],img:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Calle_Serrano_-_panoramio.jpg/1280px-Calle_Serrano_-_panoramio.jpg",map:"Calle Serrano Madrid",solo:"high"},
     {time:"17:30",t:"Plaza Cibeles + Puerta de Alcalá ★",desc:"Caminhada de Salamanca pela Calle Alcalá — passa pela <b>Puerta de Alcalá</b> (que você já viu ano passado) e desemboca na <b>Plaza Cibeles</b>, talvez a praça mais icônica de Madri: fonte da deusa Cibeles + <b>Palacio de Cibeles</b> (antiga sede dos Correios, hoje Câmara Municipal, com mirante no topo). O Real Madrid comemora títulos aqui. Suba ao mirante (€3) se quiser vista 360º do Paseo do Prado, ou só foto na praça e segue pro Retiro pela Puerta de Alcalá.",bestTime:"Fim de tarde — luz lateral sobre a fachada",tags:["NOVIDADE pra você","Mirante €3 (opcional)","Foto icônica de Madri"],img:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Cibeles_desde_el_Ayuntamiento_%28Madrid%29_%2814203354114%29.jpg/1280px-Cibeles_desde_el_Ayuntamiento_%28Madrid%29_%2814203354114%29.jpg",map:"Plaza de Cibeles Madrid",solo:"high"},
@@ -150,8 +152,8 @@ export const DAYS = [
     {lbl:"Almoço",it:"<b>Casa Dani / Mercado de la Paz</b> (Salamanca) — <span>tortilla famosa + menu del día ~€13. Sex 7-20h.</span>",map:"Casa Dani Mercado de la Paz Madrid",solo:"high"},
     {lbl:"Jantar ⭐",it:"<b>Sala de Despiece</b> (Ponzano area) — <span>cult madrilenho, reserve 1-3 dias antes.</span>",map:"Sala de Despiece Alonso Cano 28 Madrid",solo:"high"}
   ]},
-  rain:"Dia perfeito mesmo na chuva: Thyssen + CaixaForum são cobertos. Se piorar, troque o Retiro pelo <b>Museu Sorolla</b> (casa-museu do pintor da luz, em Almagro, lindo) ou Mercado de Vallehermoso em Chamberí.",
-  tips:["Praticamente todo o dia é NOVO pra você — você fez Prado, Reina Sofía e Las Letras ano passado.","Reserve mesa na Sala de Despiece (Ponzano 11) com 1–2 dias de antecedência."]
+  rain:"Bernabéu é interno (cobertura retrátil) e Atocha também — manhã sobrevive à chuva. Se piorar à tarde, troque o Retiro pelo <b>Museu Sorolla</b> (casa-museu do pintor da luz, em Almagro, lindo) ou pelo <b>Museu Thyssen</b> (~€13, terceiro do triângulo de arte) — fica perto da Atocha.",
+  tips:["<b>Reserve o Tour do Bernabéu online ANTES</b> — slot das 10h é o mais vazio. Slots de tarde lotam rápido.","Reserve mesa na Sala de Despiece (Alonso Cano 28) com 1–3 dias de antecedência.","Tour do Bernabéu é autoguiado — leve fone se quiser ouvir áudio explicativo."]
 },
 {
   id:8, dn:"Sáb", dd:"06", mon:"jun", date:"2026-06-06", city:"madrid", cityLabel:"Madrid",
@@ -219,10 +221,10 @@ export const RESERVAS = [
    d:"Tortilhas inventivas + steak tartare premiados (4.6★ / 4.5k reviews). Último jantar da viagem, sábado lota — reserve. Aberto direto 12:30→01:30 ter-dom (seg fecha 17:30).",
    link:{label:"Reserva por telefone",url:"tel:+34672876454",official:true},
    map:"Casa Macareno San Vicente Ferrer 44 Madrid",solo:"high"},
-  {p:2, when:"Antes da viagem", t:"Museu Thyssen-Bornemisza (Madri · sex 5/jun)",
-   d:"€13 — o museu que faltou no triângulo da arte (você fez Prado e Reina Sofía ano passado). Reserve horário online para furar a fila. Coleção do Renascimento ao Pop Art.",
-   link:{label:"Ingressos (oficial)",url:"https://www.museothyssen.org/en/visit",official:true},
-   map:"Museo Thyssen-Bornemisza Madrid",solo:"high"},
+  {p:2, when:"🟠 Antes da viagem — slot 10h", t:"Tour Estádio Santiago Bernabéu (Madri · sex 5/jun)",
+   d:"€35 — estádio do Real Madrid reformado em 2024 (cobertura retrátil, gramado retrátil, museu de troféus). Tour autoguiado ~1h30. Slots de tarde lotam rápido; <b>reserve o das 10h online</b> (menos cheio). Cancela com 24h.",
+   link:{label:"Reservar Tour (oficial)",url:"https://www.realmadrid.com/en/santiago-bernabeu-stadium/tour-bernabeu",official:true},
+   map:"Santiago Bernabeu Stadium Madrid",solo:"high"},
   {p:3, confirmed:{id:"0385",at:"Ter 2/jun · 13:00"}, when:"✓ Confirmado", t:"New York Café (Budapeste · ter 2/jun)",
    d:"Mesa confirmada para <b>13:00</b> via Tableversum — fura a fila do almoço/café que costuma ser longa. <b>Smart casual</b> (sem chinelo/regata). Café + bolo gira em torno de €10–12; a comida principal é fraca pro preço, então fica no doce e na vibe do interior.",
    link:{label:"Site oficial",url:"https://newyorkcafe.hu/",official:true},
