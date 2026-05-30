@@ -17,9 +17,11 @@ export default function Reservas() {
         O que reservar antes — em ordem de urgência
       </p>
       {RESERVAS.map((r, i) => (
-        <div key={i} className={`res p${r.p} fade`}>
+        <div key={i} className={`res p${r.p} ${r.confirmed ? 'confirmed' : ''} fade`}>
           <div className="pr">
-            {priorityLabel(r.p)} · {r.when}
+            {r.confirmed
+              ? `✓ Confirmado · ${r.confirmed.at || ''}`
+              : `${priorityLabel(r.p)} · ${r.when}`}
           </div>
           <h3>
             {r.solo && (
@@ -34,14 +36,20 @@ export default function Reservas() {
           </h3>
           <p dangerouslySetInnerHTML={{ __html: r.d }} />
           <div className="btns">
-            <a
-              className={`btn ${r.link.official ? 'official' : ''}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              href={r.link.url}
-            >
-              {r.link.label} ↗
-            </a>
+            {r.confirmed ? (
+              <span className="btn confirmed" title={`Reserva confirmada #${r.confirmed.id}`}>
+                ✓ Reservado · #{r.confirmed.id}
+              </span>
+            ) : (
+              <a
+                className={`btn ${r.link.official ? 'official' : ''}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={r.link.url}
+              >
+                {r.link.label} ↗
+              </a>
+            )}
             {r.map && (
               <a
                 className={`btn map ${r.mapUncertain ? 'uncertain' : ''}`}

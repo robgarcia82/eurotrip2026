@@ -44,9 +44,14 @@ export default function Block({ block: b, dayCls, isDone, onToggle }) {
           </div>
         )}
 
-        {(b.ticket || b.map) && (
+        {(b.confirmed || b.ticket || b.map) && (
           <div className="btns">
-            {b.ticket && (
+            {b.confirmed ? (
+              <span className="btn confirmed" title={`Reserva confirmada #${b.confirmed.id}`}>
+                ✓ Reservado · #{b.confirmed.id}
+                {b.confirmed.at && ` · ${b.confirmed.at}`}
+              </span>
+            ) : b.ticket && (
               <a
                 className={`btn ${b.ticket.official ? 'official' : ''}`}
                 target="_blank"
