@@ -1,0 +1,167 @@
+/* Roteiro · Madrid + Budapeste — estilos portados do app HTML original */
+
+:root{
+    --paper:#F5EFE3; --paper-2:#EFE6D6; --card:#FBF7EE;
+    --ink:#241F1A; --ink-soft:#6A5F52; --ink-faint:#9A8E7C;
+    --terra:#C2542F;        /* Madrid */
+    --gold:#B27E16;         /* Budapeste */
+    --gold-bright:#E0A21C;
+    --sage:#7C8A66;         /* leve */
+    --rust:#A23B2A;         /* alerta */
+    --line:rgba(36,31,26,.12);
+    --line-2:rgba(36,31,26,.07);
+    --shadow:0 1px 2px rgba(36,31,26,.05),0 10px 30px -12px rgba(36,31,26,.18);
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Hanken Grotesque",sans-serif;font-size:16px;line-height:1.55;
+    background-image:radial-gradient(circle at 12% 18%,rgba(194,84,47,.05),transparent 38%),radial-gradient(circle at 88% 8%,rgba(178,126,22,.06),transparent 40%);
+    background-attachment:fixed;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px 90px}
+  a{color:inherit}
+  /* ---------- HEADER ---------- */
+  header.top{padding:26px 0 14px;text-align:center}
+  .kicker{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-faint);font-weight:600}
+  h1.title{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(34px,8vw,52px);line-height:.98;margin:8px 0 6px;letter-spacing:-.01em}
+  h1.title em{font-style:italic;color:var(--terra)}
+  .subline{color:var(--ink-soft);font-size:14.5px}
+  .subline b{color:var(--ink);font-weight:600}
+  .rule{height:1px;background:var(--line);margin:16px 0 0}
+  /* ---------- SECTION TABS ---------- */
+  nav.tabs{position:sticky;top:0;z-index:40;background:rgba(245,239,227,.86);backdrop-filter:blur(10px);
+    margin:0 -18px;padding:10px 18px;border-bottom:1px solid var(--line);display:flex;gap:8px;justify-content:center}
+  nav.tabs button{font-family:inherit;font-size:13.5px;font-weight:600;color:var(--ink-soft);background:none;border:1px solid transparent;
+    padding:7px 14px;border-radius:999px;cursor:pointer;transition:.2s;white-space:nowrap}
+  nav.tabs button.on{background:var(--ink);color:var(--paper)}
+  nav.tabs button:not(.on):hover{border-color:var(--line);color:var(--ink)}
+  /* ---------- DAY PILLS ---------- */
+  .daystrip{display:flex;gap:8px;overflow-x:auto;padding:14px 2px 6px;scrollbar-width:none;scroll-snap-type:x proximity}
+  .daystrip::-webkit-scrollbar{display:none}
+  .pill{flex:0 0 auto;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:9px 13px;min-width:74px;text-align:center;cursor:pointer;transition:.18s;position:relative}
+  .pill:hover{transform:translateY(-2px)}
+  .pill .dn{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);font-weight:600}
+  .pill .dd{font-family:"Fraunces",serif;font-size:21px;font-weight:600;line-height:1.05;margin-top:1px}
+  .pill .city{font-size:10px;color:var(--ink-faint);margin-top:1px;font-weight:600}
+  .pill.on{background:var(--ink);border-color:var(--ink)}
+  .pill.on .dn,.pill.on .city{color:rgba(245,239,227,.7)}
+  .pill.on .dd{color:var(--paper)}
+  .pill .dot{position:absolute;top:7px;right:8px;width:7px;height:7px;border-radius:50%}
+  .pill .dot.light{background:var(--sage)} .pill .dot.mod{background:var(--gold-bright)} .pill .dot.int{background:var(--terra)}
+  .pill.today::after{content:"hoje";position:absolute;bottom:-9px;left:50%;transform:translateX(-50%);font-size:8.5px;
+    letter-spacing:.1em;text-transform:uppercase;background:var(--terra);color:#fff;padding:1px 6px;border-radius:6px;font-weight:700}
+  /* ---------- DAY HEADER ---------- */
+  .dayhead{margin:22px 0 6px;animation:rise .5s both}
+  .dayhead .meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-soft)}
+  .cityflag{font-weight:700;letter-spacing:.04em;padding:3px 10px;border-radius:999px;font-size:11.5px;text-transform:uppercase}
+  .cityflag.madrid{background:rgba(194,84,47,.13);color:var(--terra)}
+  .cityflag.budapeste{background:rgba(178,126,22,.15);color:var(--gold)}
+  .cityflag.voo{background:rgba(36,31,26,.08);color:var(--ink-soft)}
+  .intensity{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em}
+  .intensity .bars{display:inline-flex;gap:2px}
+  .intensity .bars i{width:5px;height:12px;border-radius:1.5px;background:var(--line);display:inline-block}
+  .intensity.light .bars i:nth-child(1){background:var(--sage)}
+  .intensity.mod .bars i:nth-child(-n+2){background:var(--gold-bright)}
+  .intensity.int .bars i{background:var(--terra)}
+  h2.dtitle{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(26px,6.5vw,36px);line-height:1.02;margin:10px 0 4px;letter-spacing:-.01em}
+  .dsub{color:var(--ink-soft);font-size:15px;margin-bottom:4px}
+  /* ---------- TIMELINE ---------- */
+  .tl{position:relative;margin:18px 0 8px;padding-left:6px}
+  .block{position:relative;padding:0 0 6px 30px;border-left:2px solid var(--line);margin-left:6px}
+  .block:last-child{border-color:transparent}
+  .block .node{position:absolute;left:-7.5px;top:3px;width:13px;height:13px;border-radius:50%;background:var(--paper);border:2.5px solid var(--terra)}
+  .block.bud .node{border-color:var(--gold)}
+  .block .time{font-family:"Fraunces",serif;font-weight:600;font-size:14px;color:var(--ink-soft);letter-spacing:.02em}
+  .block .bt{font-size:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 16px;margin:7px 0 18px;box-shadow:var(--shadow)}
+  .card h3{font-family:"Fraunces",serif;font-weight:600;font-size:19px;margin:0 0 4px;letter-spacing:-.005em;display:flex;align-items:flex-start;gap:8px;cursor:pointer}
+  .card h3 .chk{flex:0 0 auto;width:20px;height:20px;border-radius:6px;border:2px solid var(--line);margin-top:2px;transition:.15s;display:grid;place-items:center;font-size:12px;color:transparent}
+  .card.done h3 .chk{background:var(--sage);border-color:var(--sage);color:#fff}
+  .card.done h3 .nm{color:var(--ink-faint);text-decoration:line-through}
+  .card p{margin:6px 0 0;font-size:14.5px;color:var(--ink-soft)}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
+  .tag{font-size:11px;font-weight:600;letter-spacing:.03em;padding:4px 9px;border-radius:8px;background:var(--paper-2);color:var(--ink-soft)}
+  .tag.best{background:rgba(124,138,102,.16);color:#566042}
+  .tag.best::before{content:"☀ "}
+  .tag.solo-high{background:rgba(124,138,102,.18);color:#4a5739}
+  .tag.solo-high::before{content:"👤 "}
+  .tag.solo-med{background:rgba(178,126,22,.15);color:#7a5a12}
+  .tag.solo-med::before{content:"👤 "}
+  .tag.solo-low{background:rgba(162,59,42,.13);color:var(--rust)}
+  .tag.solo-low::before{content:"⚠ "}
+  .solo-pill{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;
+    padding:1.5px 6px;border-radius:5px;margin-right:6px;vertical-align:1px;white-space:nowrap}
+  .solo-pill.high{background:rgba(124,138,102,.18);color:#4a5739}
+  .solo-pill.med{background:rgba(178,126,22,.15);color:#7a5a12}
+  .solo-pill.low{background:rgba(162,59,42,.13);color:var(--rust)}
+  .solo-pill::before{content:"solo: ";opacity:.7;font-weight:600}
+  .note{margin-top:11px;font-size:13.5px;border-left:3px solid var(--gold-bright);background:rgba(224,162,28,.08);
+    padding:9px 12px;border-radius:0 10px 10px 0;color:#7a5a12}
+  .note.alert{border-color:var(--rust);background:rgba(162,59,42,.08);color:#8a3525}
+  .note b{font-weight:700}
+  .btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;text-decoration:none;
+    padding:8px 13px;border-radius:10px;border:1px solid var(--ink);color:var(--ink);background:none;transition:.15s}
+  .btn:hover{background:var(--ink);color:var(--paper)}
+  .btn.official::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--sage)}
+  .btn.map{border-style:solid;background:rgba(36,31,26,.04)}
+  .btn.map::before{content:"📍";font-size:13px}
+  .btn.map.uncertain{border-style:dashed;border-color:rgba(162,59,42,.5);color:var(--rust);background:rgba(162,59,42,.04)}
+  .btn.map.uncertain::before{content:"📍"}
+  .mini-map{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:600;text-decoration:none;
+    padding:4px 9px;border-radius:8px;background:var(--paper-2);color:var(--ink);white-space:nowrap;
+    border:1px solid var(--line);transition:.15s;flex:0 0 auto;align-self:flex-start;margin-top:2px}
+  .mini-map:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .mini-map::before{content:"📍";font-size:11px}
+  .mini-map.uncertain{border-style:dashed;border-color:rgba(162,59,42,.4);color:var(--rust);background:rgba(162,59,42,.04)}
+  .mini-map.uncertain::after{content:" (a confirmar)";font-size:10px;font-weight:500;opacity:.85}
+  /* ---------- FOOD / RAIN ---------- */
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:14px 0;box-shadow:var(--shadow)}
+  .panel h4{font-family:"Fraunces",serif;font-weight:600;font-size:16px;margin:0 0 10px;display:flex;align-items:center;gap:8px}
+  .panel h4 .ic{font-size:17px}
+  .food-row{display:flex;gap:10px;padding:8px 0;border-top:1px solid var(--line-2);font-size:14px;align-items:flex-start}
+  .food-row:first-of-type{border-top:none}
+  .food-row .lbl{flex:0 0 84px;font-weight:600;color:var(--terra);font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;padding-top:1px}
+  .block.bud ~ * .food-row .lbl,.budfood .lbl{color:var(--gold)}
+  .food-row .it{flex:1 1 auto;min-width:0}
+  .food-row .it b{font-weight:600;color:var(--ink)}
+  .food-row .it span{color:var(--ink-soft)}
+  .rain{border:1px dashed var(--line);background:rgba(60,90,120,.05)}
+  .rain h4 .ic{color:#3d6b8a}
+  /* ---------- RESERVAS PAGE ---------- */
+  .res{border-left:4px solid var(--line);background:var(--card);border-radius:0 14px 14px 0;padding:14px 16px;margin:12px 0;box-shadow:var(--shadow)}
+  .res.p1{border-color:var(--rust)} .res.p2{border-color:var(--gold-bright)} .res.p3{border-color:var(--sage)}
+  .res .pr{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+  .res.p1 .pr{color:var(--rust)} .res.p2 .pr{color:var(--gold)} .res.p3 .pr{color:#566042}
+  .res h3{font-family:"Fraunces",serif;font-weight:600;font-size:18.5px;margin:3px 0 5px}
+  .res p{margin:0;font-size:14px;color:var(--ink-soft)}
+  /* ---------- LOGISTICA PAGE ---------- */
+  .seg{display:flex;align-items:stretch;gap:0;background:var(--card);border:1px solid var(--line);border-radius:16px;
+    overflow:hidden;margin:12px 0;box-shadow:var(--shadow)}
+  .seg .ends{flex:1;padding:15px 16px}
+  .seg .mid{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 14px;
+    background:var(--paper-2);font-size:11px;color:var(--ink-soft);text-align:center;min-width:96px}
+  .seg .mid .ico{font-size:18px}
+  .seg .mid .fn{font-weight:700;color:var(--ink);font-size:12.5px;margin-top:2px}
+  .endrow{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+  .endrow:first-child{margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed var(--line)}
+  .endrow .t{font-family:"Fraunces",serif;font-size:24px;font-weight:600;line-height:1}
+  .endrow .pl{font-size:12px;color:var(--ink-soft);text-align:right}
+  .endrow .pl b{display:block;color:var(--ink);font-size:13.5px;font-weight:600}
+  .seg .det{font-size:11.5px;color:var(--ink-faint);margin-top:9px}
+  .htl{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 16px;margin:12px 0;box-shadow:var(--shadow)}
+  .htl .nm{font-family:"Fraunces",serif;font-size:18px;font-weight:600;display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+  .htl .city2{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+  .htl .meta2{font-size:13px;color:var(--ink-soft);margin-top:4px}
+  .htl .ci{display:flex;gap:14px;margin-top:10px;flex-wrap:wrap;font-size:13px}
+  .htl .ci div b{display:block;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);font-weight:700}
+  .small{font-size:12.5px;color:var(--ink-faint)}
+  .secttitle{font-family:"Fraunces",serif;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;
+    color:var(--ink-faint);margin:26px 0 4px}
+  .hide{display:none}
+  @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .fade{animation:rise .45s both}
+  footer{text-align:center;color:var(--ink-faint);font-size:11.5px;margin-top:30px;line-height:1.7}
