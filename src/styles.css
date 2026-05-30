@@ -30,13 +30,19 @@
   .subline{color:var(--ink-soft);font-size:14.5px}
   .subline b{color:var(--ink);font-weight:600}
   .rule{height:1px;background:var(--line);margin:16px 0 0}
-  /* ---------- SECTION TABS ---------- */
-  nav.tabs{position:sticky;top:0;z-index:40;background:rgba(245,239,227,.86);backdrop-filter:blur(10px);
-    margin:0 -18px;padding:10px 18px;border-bottom:1px solid var(--line);display:flex;gap:8px;justify-content:center}
-  nav.tabs button{font-family:inherit;font-size:13.5px;font-weight:600;color:var(--ink-soft);background:none;border:1px solid transparent;
-    padding:7px 14px;border-radius:999px;cursor:pointer;transition:.2s;white-space:nowrap}
-  nav.tabs button.on{background:var(--ink);color:var(--paper)}
-  nav.tabs button:not(.on):hover{border-color:var(--line);color:var(--ink)}
+  /* ---------- BOTTOM NAV ---------- */
+  nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:50;
+    background:rgba(245,239,227,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-top:1px solid var(--line);display:flex;justify-content:space-around;align-items:stretch;
+    padding:8px 0 calc(8px + env(safe-area-inset-bottom)) 0}
+  nav.tabs button{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+    font-family:inherit;font-size:11px;font-weight:600;letter-spacing:.01em;
+    color:var(--ink-faint);background:none;border:0;padding:4px 6px;cursor:pointer;transition:color .15s}
+  nav.tabs button .tab-ico{display:grid;place-items:center;transition:transform .15s}
+  nav.tabs button.on{color:var(--terra)}
+  nav.tabs button.on .tab-ico{transform:translateY(-1px)}
+  nav.tabs button:not(.on):hover{color:var(--ink-soft)}
+  body{padding-bottom:calc(62px + env(safe-area-inset-bottom))}
   /* ---------- DAY PILLS ---------- */
   .daystrip{display:flex;gap:8px;overflow-x:auto;padding:14px 2px 6px;scrollbar-width:none;scroll-snap-type:x proximity}
   .daystrip::-webkit-scrollbar{display:none}
